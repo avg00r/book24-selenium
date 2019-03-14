@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.book24.selenium</groupId>
+    <artifactId>maven-unit-test</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- https://maven.apache.org/general.html#encoding-warning -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <finalName>maven-unit-test</finalName>
+
+        <plugins>
+<!--            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+            </plugin>-->
+<!--            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <systemProperties>
+<!--                        <property>
+                            <name>screenshot_path1</name>
+                            <value>${screenshot_path}</value>
+                        </property>-->
+<!--                        <property>
+                            <name>props</name>
+                            <value>${props}</value>
+                        </property>-->
+                    </systemProperties>
+                    <!-- Suite testng xml file to consider for test execution -->
+                    <!--<suiteXmlFiles>-->
+                    <!--<suiteXmlFile>${basedir}/suite.xml</suiteXmlFile>-->
+                    <!--</suiteXmlFiles>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <configuration>
+                            <!--<junitArtifactName>none:none</junitArtifactName>-->
+                            <testNGArtifactName>org.testng:testng</testNGArtifactName>
+                        </configuration>
+                    </execution>
+                </executions>
+<!--                <configuration>
+                    <includes>
+                        <include>TestMain.java</include>
+                    </includes>
+                </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <!-- junit 5, unit test -->
+<!--
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+-->
+
+        <!-- TestNG, unit test -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium WebDriver-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
+
+
+<!--        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+        </dependency>-->
+        <!--
+                <dependency>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-engine</artifactId>
+                    <version>5.3.1</version>
+                    <scope>test</scope>
+                </dependency>
+        -->
+    </dependencies>
+</project>
