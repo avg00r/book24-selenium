@@ -6,3 +6,4 @@ This repo contains a Java project that uses Selenium to perform automated web te
 
 * JDK
 * Maven
+* Create System Property "webdriver.chrome.driver" and specify path to it, for example "d:\soft\webdrivers\chromedriver.exe"
